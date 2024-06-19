@@ -41,3 +41,55 @@ async def gen2info(interaction: discord.Interaction):
         embed.add_field(name=seller_name, value=seller['store_link'], inline=True)
 
     await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="gen3", description="Display information about Generation 3 AirPods")
+async def gen3info(interaction: discord.Interaction):
+    embed = discord.Embed(title="Gen 3", color=discord.Color.blue())
+    product = data['versions']['gen3']
+
+    embed.add_field(name="Chip Models", value=product['chipmodels'], inline=False)
+    embed.add_field(name="Features", value="\n".join(product['features']), inline=False) 
+    embed.add_field(name="Price", value=product['price'], inline=True)
+    embed.add_field(name="Notes", value=product['note'], inline=True)
+
+    # Add seller fields
+    for seller_name in product['sellers']:
+        seller = data['sellers'][seller_name]
+        embed.add_field(name=seller_name, value=seller['store_link'], inline=True)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="pro1", description="Display information about Pro 1 AirPods")
+async def pro1info(interaction: discord.Interaction):
+    embed = discord.Embed(title="Pro 1", color=discord.Color.blue())
+    product = data['versions']['pro1']
+
+    embed.add_field(name="Chip Models", value=product['chipmodels'], inline=False)
+    embed.add_field(name="Features", value="\n".join(product['features']), inline=False) 
+    embed.add_field(name="Price", value=product['price'], inline=True)
+    embed.add_field(name="Notes", value=product['note'], inline=True)
+
+    # Add seller fields
+    for seller_name in product['sellers']:
+        seller = data['sellers'][seller_name]
+        embed.add_field(name=seller_name, value=seller['store_link'], inline=True)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="pro2", description="Display information about Pro 2 AirPods")
+async def pro2info(interaction: discord.Interaction):
+    embed = discord.Embed(title="Pro 2", color=discord.Color.blue())
+    product = data['versions']['pro2']
+
+    embed.add_field(name="Chip Models", value=product['chipmodels'], inline=False)
+    embed.add_field(name="Features", value="\n".join(product['features']), inline=False) 
+    embed.add_field(name="Price", value=product['price'], inline=True)
+    embed.add_field(name="Notes", value=product['note'], inline=True)
+
+    # Add seller fields
+    for seller_name in product['sellers']:
+        seller = data['sellers'][seller_name]
+        embed.add_field(name=seller_name, value=seller['store_link'], inline=True)
+
+    await interaction.response.send_message(embed=embed)
+
