@@ -40,3 +40,43 @@
             "note": "Renaming, Find My, Audio Share, Live Listen, Pop-up, Battery Report, In-Ear Detection, About Information, Apple Watch Compatibility features are supported by all currently sold units. Versions will show specific features. iCloud Connect is not supported by any replica."
 
         }
+
+    },
+    "sellers": {
+        "JdFoot": {
+            "store_link": "https://jdfoot.co",
+            "whatsapp": "",
+            "discord": "jdfoot"
+        },
+        "HiCity": {
+            "store_link": "https://hicity.com",
+            "whatsapp": "",
+            "discord": "jackhicity"
+        },
+        "Jenny": {
+            "store_link": "https://jenius.store/index.php#top",
+            "whatsapp": "",
+            "discord": "jennychen3329"
+        },
+        "Dyson": {
+            "store_link": "https://aisenstore.xyz/",
+            "whatsapp": "",
+            "discord": "dyson6308"
+        },
+        "Mike-YM": {
+            "store_link": "https://weidian.com/?userid=1842760073",
+            "whatsapp": "+86 193 9783 5519",
+            "discord": "miketao._78467"
+        },
+        "Beschan": {
+            "store_link": "https://weidian.com/item.html?itemID=7232813538",
+            "whatsapp": "+86 134 1863 5098",
+            "discord": "beschan"
+        },
+        "BXM": {
+            "store_link": "https://www.bxmstore.com/",
+            "whatsapp": "+86 185 6956 8767",
+            "discord": "bxm_nomo"
+        }
+    }
+}
