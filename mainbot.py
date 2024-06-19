@@ -93,3 +93,102 @@ async def pro2info(interaction: discord.Interaction):
 
     await interaction.response.send_message(embed=embed)
 
+@bot.tree.command(name="maxes", description="Display information about AirPod Maxes")
+async def maxesinfo(interaction: discord.Interaction):
+    embed = discord.Embed(title="Maxes", color=discord.Color.blue())
+    product = data['versions']['maxes']
+
+    embed.add_field(name="Chip Models", value=product['chipmodels'], inline=False)
+    embed.add_field(name="Features", value="\n".join(product['features']), inline=False) 
+    embed.add_field(name="Price", value=product['price'], inline=True)
+    embed.add_field(name="Notes", value=product['note'], inline=True)
+
+    # Add seller fields
+    for seller_name in product['sellers']:
+        seller = data['sellers'][seller_name]
+        embed.add_field(name=seller_name, value=seller['store_link'], inline=True)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="hicity", description="Information about HiCity")
+async def hicity(interaction: discord.Interaction):
+    embed = discord.Embed(title="HiCity", color=discord.Color.blue())
+    seller = data['sellers']['HiCity']
+
+    embed.add_field(name="WhatsApp", value=seller['whatsapp'], inline=False)
+    embed.add_field(name="Discord", value=seller['discord'], inline=False)
+    embed.add_field(name="Website", value=seller['store_link'], inline=False)
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="dyson", description="Information about Dyson")
+async def dyson(interaction: discord.Interaction):
+    embed = discord.Embed(title="Dyson", color=discord.Color.blue())
+    seller = data['sellers']['Dyson']
+
+    embed.add_field(name="WhatsApp", value=seller['whatsapp'], inline=False)
+    embed.add_field(name="Discord", value=seller['discord'], inline=False)
+    embed.add_field(name="Website", value=seller['store_link'], inline=False)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="jenny", description="Information about Jenny")
+async def jenny(interaction: discord.Interaction):
+    embed = discord.Embed(title="Jenny", color=discord.Color.blue())
+    seller = data['sellers']['Jenny']
+
+    embed.add_field(name="WhatsApp", value=seller['whatsapp'], inline=False)
+    embed.add_field(name="Discord", value=seller['discord'], inline=False)
+    embed.add_field(name="Website", value=seller['store_link'], inline=False)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="beschan", description="Information about Beschan")
+async def gen2info(interaction: discord.Interaction):
+    embed = discord.Embed(title="Beschan", color=discord.Color.blue())
+    seller = data['sellers']['Beschan']
+
+    embed.add_field(name="WhatsApp", value=seller['whatsapp'], inline=False)
+    embed.add_field(name="Discord", value=seller['discord'], inline=False)
+    embed.add_field(name="Website", value=seller['store_link'], inline=False)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="mikeym", description="Information about Mike-YM")
+async def mikeym(interaction: discord.Interaction):
+    embed = discord.Embed(title="Mike-YM", color=discord.Color.blue())
+    seller = data['sellers']['Mike-YM']
+
+    embed.add_field(name="WhatsApp", value=seller['whatsapp'], inline=False)
+    embed.add_field(name="Discord", value=seller['discord'], inline=False)
+    embed.add_field(name="Website", value=seller['store_link'], inline=False)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="jdfoot", description="Information for JD-Foot")
+async def gen2info(interaction: discord.Interaction):
+    embed = discord.Embed(title="JD-Foot", color=discord.Color.blue())
+    seller = data['sellers']['JdFoot']
+
+    embed.add_field(name="WhatsApp", value=seller['whatsapp'], inline=False)
+    embed.add_field(name="Discord", value=seller['discord'], inline=False)
+    embed.add_field(name="Website", value=seller['store_link'], inline=False)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="bxm", description="Information for BXM")
+async def bxm(interaction: discord.Interaction):
+    embed = discord.Embed(title="BXM", color=discord.Color.blue())
+    seller = data['sellers']['BXM']
+
+    embed.add_field(name="WhatsApp", value=seller['whatsapp'], inline=False)
+    embed.add_field(name="Discord", value=seller['discord'], inline=False)
+    embed.add_field(name="Website", value=seller['store_link'], inline=False)
+
+    await interaction.response.send_message(embed=embed)
+
+@bot.event 
+async def on_ready():
+    await tree.sync(guild=discord.Object(id=1224260115188809728)) # REMEMBER TO UPDATE GUILD ID
+    print(f"We have logged in as {bot.user}")
+
+bot.run(TOKEN) 
